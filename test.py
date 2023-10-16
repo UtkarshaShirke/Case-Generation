@@ -37,9 +37,9 @@ def main():
                     initial_prompt = "Act like a management case study generator. Make sure to include tables with sample data regarding the case."
 
                     if st.session_state.conversation is None:
-                        config = toml.load("secrets.toml")
-                        api_key = config["openai"]["api_key"]
-                        openai.api_key = api_key # Replace with your OpenAI API key
+                        #config = toml.load("secrets.toml")
+                        #api_key = config["openai"]["api_key"]
+                        openai.api_key = st.secrets['OPENAI_API_KEY'] # Replace with your OpenAI API key
                         st.session_state.conversation = []
 
                         for i, question in enumerate(questions):
